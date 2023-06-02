@@ -3,7 +3,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "f1b91a44",
+   "id": "5beac6fc",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -13,12 +13,11 @@
     "    random_number = random.randint(1,x)\n",
     "    guess = 0\n",
     "    while guess != random_number:\n",
-    "        guess = int(input(f'guess a number between 1 and {x}: '))\n",
+    "        guess = int(input(f 'guess a number between 1 and {x}: '))\n",
     "        if guess < random_number:\n",
     "            print(\"Sorry, guess again. Too low\")\n",
-    "        elif guess > random_number:\n",
+    "        elif guess < random_number:\n",
     "            print(\"Sorry, guess again. Too Big\")\n",
-    "    print(f\"YAy! your guess is right {guess}\")\n",
     "            \n",
     "guess(int(input(\"input the upper limit : \")))"
    ]
@@ -26,7 +25,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "da85ab72",
+   "id": "25868558",
    "metadata": {},
    "outputs": [],
    "source": []
