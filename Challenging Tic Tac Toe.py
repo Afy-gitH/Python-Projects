@@ -1,6 +1,6 @@
 # use Minimax, uitility function, see player1.py for it
 # if it's X's chance, we need to maximize the cance of x to win
-from player_1 import HumanPlayer, GenicomputerPlayer
+from player_1 import HumanPlayer, GenicomputerPlayer,RandomComputerPlayer
 import time
 class TicTacToe:
     #to create the board
@@ -95,7 +95,18 @@ def play(game, x_player, o_player, print_game=True):
         print("It's a tie!")
 
 if __name__ == "__main__":
-    x_player = HumanPlayer('X')
-    o_player = GenicomputerPlayer('O')
-    t = TicTacToe()
-    play(t, x_player, o_player, print_game=True)
+    x_wins = 0
+    o_wins = 0
+    ties = 0
+    for x in range(1000):
+        x_player = RandomComputerPlayer('X')
+        o_player = GenicomputerPlayer('O')
+        t = TicTacToe()
+        result = play(t, x_player, o_player, print_game=False)
+        if result == 'X':
+            x_wins += 1
+        elif result == 'O':
+            o_wins += 1
+        else:
+            ties +=1
+        print(f'after 1000 ittration we can see that number of \n "X" wins : {x_wins} \n "O" wins : {o_wins} \n "ties" : {ties}')
